@@ -1,14 +1,18 @@
 import React from "react";
 import logo from "../assets/airbnb.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="shadow-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
-        <div className="flex items-center">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4 sm:px-8">
+        <Link to="/" className="flex items-center">
           <img src={logo} alt="Logo da Airbnb" className="h-14 w-14" />
-        </div>
-        <div className="flex items-center rounded-full border border-gray-300 py-2 pr-4 pl-8 shadow-md">
+        </Link>
+        <Link
+          to="/"
+          className="hidden items-center rounded-full border border-gray-300 py-2 pr-4 pl-8 shadow-md lg:flex"
+        >
           <p className="border-r border-r-gray-300 pr-4">Qualquer lugar</p>
           <p className="border-r border-r-gray-300 px-4">Qualquer semana</p>
           <p className="px-4">Hóspedes</p>
@@ -29,9 +33,12 @@ const Header = () => {
               />
             </svg>
           </div>
-        </div>
+        </Link>
 
-        <div className="flex items-center gap-2 rounded-full border border-gray-300 py-2 pr-4 pl-8 shadow-md">
+        <Link
+          to="/login"
+          className="flex items-center gap-2 rounded-full border border-gray-300 py-2 pr-4 pl-8 shadow-md"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -59,8 +66,8 @@ const Header = () => {
             />
           </svg>
 
-          <p className="px-4">Henrique XYZ</p>
-        </div>
+          <p className="max-w-20 truncate sm:max-w-32">Henrique XYZ</p>
+        </Link>
       </div>
     </header>
   );
