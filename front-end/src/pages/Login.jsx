@@ -9,16 +9,16 @@ const Login = () => {
         <form className="flex w-full flex-col gap-2">
           <input
             type="email"
-            className="w-full rounded-full border border-gray-300 px-4 py-2"
+            className="w-full rounded-full border border-gray-300 px-4 py-2 placeholder-gray-400"
             placeholder="Digite seu e-mail"
           />
           <input
             type="password"
-            className="w-full rounded-full border border-gray-300 px-4 py-2"
+            className="w-full rounded-full border border-gray-300 px-4 py-2 placeholder-gray-400"
             placeholder="Digite sua senha"
           />
 
-          <button className="bg-primary-300 w-full cursor-pointer rounded-full border border-gray-300 px-4 py-2 font-bold text-white">
+          <button className="bg-primary-400 w-full cursor-pointer rounded-full border border-gray-300 px-4 py-2 font-bold text-white">
             Login
           </button>
         </form>

@@ -17,12 +17,12 @@ const Header = () => {
           <p className="border-r border-r-gray-300 px-4">Qualquer semana</p>
           <p className="px-4">Hóspedes</p>
 
-          <div className="bg-primary-300 rounded-full text-white">
+          <div className="bg-primary-400 flex items-center justify-center rounded-full text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
+              strokeWidth={1.2}
               stroke="currentColor"
               className="size-8"
             >
