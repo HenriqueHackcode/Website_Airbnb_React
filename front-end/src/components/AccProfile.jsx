@@ -28,7 +28,7 @@ const AccProfile = () => {
       </p>
       <button
         onClick={handleLogout}
-        className="bg-primary-400 hover:bg-primary-300 min-w-44 cursor-pointer rounded-full px-4 py-2 text-white transition"
+        className="bg-primary-400 hover:bg-primary-500 min-w-44 cursor-pointer rounded-full px-4 py-2 text-white transition"
       >
         Logout
       </button>
