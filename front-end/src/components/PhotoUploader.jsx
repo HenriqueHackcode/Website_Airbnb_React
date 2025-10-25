@@ -6,19 +6,43 @@ const PhotoUploader = ({ photolink, setPhotoLink, setPhotos, photos }) => {
     e.preventDefault();
 
     if (photolink) {
-      const { data } = await axios.post("/places/upload/link", {
-        link: photolink,
-      });
-      const { filename } = data;
-      setPhotos((prev) => [...prev, filename]);
+      try {
+        const { data: filename } = await axios.post("/places/upload/link", {
+          link: photolink,
+        });
+
+        setPhotos((prev) => [...prev, filename]);
+      } catch (error) {
+        alert("Error uploading link photos:", JSON.stringify(error));
+      }
     } else {
       alert("Por favor, insira um link de foto válido.");
     }
   };
 
+  const uploadPhoto = async (e) => {
+    const { files } = e.target;
+    const filesArray = [...files];
+    const formData = new FormData();
+
+    filesArray.forEach((file) => {
+      formData.append("files", file);
+    });
+
+    try {
+      const { data: urlArray } = await axios.post("/places/upload", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      console.log(urlArray);
+      setPhotos((prev) => [...prev, ...urlArray]);
+    } catch (error) {
+      alert("Error uploading photos:", JSON.stringify(error));
+    }
+  };
+
   return (
     <div className="flex flex-col gap-1">
-      <label htmlFor="photolink" className="ml-2 text-2xl font-bold">
+      <label htmlFor="photos" className="ml-2 text-2xl font-bold">
         Fotos
       </label>
 
@@ -38,11 +62,12 @@ const PhotoUploader = ({ photolink, setPhotoLink, setPhotos, photos }) => {
           Enviar foto
         </button>
       </div>
+
       <div className="grid grid-cols-5 gap-4">
         {photos.map((photo) => (
           <img
             className="aspect-square rounded-2xl object-cover"
-            src={`${axios.defaults.baseURL}/tmp/${photo}`}
+            src={`${photo}`}
             alt="Imagens do lugar"
             key={photo}
           />
@@ -52,7 +77,13 @@ const PhotoUploader = ({ photolink, setPhotoLink, setPhotos, photos }) => {
           htmlFor="file"
           className="flex aspect-square cursor-pointer items-center justify-center gap-2 rounded-2xl border border-gray-300"
         >
-          <input type="file" id="file" className="hidden" />
+          <input
+            type="file"
+            id="file"
+            className="hidden"
+            multiple
+            onChange={uploadPhoto}
+          />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

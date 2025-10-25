@@ -2,8 +2,8 @@ import { Router } from 'express';
 import Place from './models.js';
 import { JWTVerify } from '../../utils/jwt.js';
 import { connectDb } from '../../config/db.js';
-import { downloadImage } from '../../utils/imageDownloader.js';
-import { __dirname } from '../../server.js';
+
+import { sendToS3, downloadImage, uploadImage } from './controller.js';
 
 const router = Router();
 
@@ -49,13 +49,46 @@ router.post('/upload/link', async (req, res) => {
   const { link } = req.body;
 
   try {
-    const filename = await downloadImage(link, `${__dirname}/tmp/`);
+    const { filename, fullPath, mimeType } = await downloadImage(link);
 
-    res.json({ filename });
+    const s3FileUrl = await sendToS3(filename, fullPath, mimeType);
+
+    res.json(s3FileUrl);
   } catch (error) {
     console.error('Error downloading image:', error);
     res.status(500).json('Erro ao baixar a imagem!');
   }
+});
+
+router.post('/upload', uploadImage().array('files', 10), async (req, res) => {
+  const { files } = req;
+
+  const filePromise = new Promise((resolve, reject) => {
+    const fileURLArray = [];
+
+    files.forEach(async (file, index) => {
+      const { filename, path, mimetype } = file;
+
+      try {
+        const fileURL = await sendToS3(filename, path, mimetype);
+
+        fileURLArray.push(fileURL);
+      } catch (error) {
+        console.error('Error uploading file to S3:', error);
+        reject(error);
+      }
+    });
+    const idIntervalo = setInterval(() => {
+      if (files.length === fileURLArray.length) {
+        clearInterval(idIntervalo);
+
+        resolve(fileURLArray);
+      }
+    }, 50);
+  });
+
+  const fileURLArrayResolved = await filePromise;
+  res.json(fileURLArrayResolved);
 });
 
 export default router;
