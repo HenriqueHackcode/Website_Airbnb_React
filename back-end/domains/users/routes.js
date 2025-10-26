@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
 
 router.get('/profile', async (req, res) => {
   const userInfo = await JWTVerify(req);
+
   res.json(userInfo);
 });
 
