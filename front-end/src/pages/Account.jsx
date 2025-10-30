@@ -4,9 +4,9 @@ import React from "react";
 import AccProfile from "../components/AccProfile";
 import AccPlaces from "../components/AccPlaces";
 import NewPlace from "../components/NewPlace";
+import AccBookings from "../components/AccBookings";
 
 const Account = () => {
-  // Captura os três parâmetros da rota no App.jsx
   const { subpage, action, id } = useParams();
   const { user, ready } = useUserContext();
 
@@ -36,7 +36,7 @@ const Account = () => {
   }
 
   if (activeSubpage === "bookings") {
-    content = <div>Minhas Reservas. (Componente Bookings deve vir aqui)</div>;
+    content = <AccBookings />;
   }
 
   if (activeSubpage === "profile") {
@@ -47,7 +47,7 @@ const Account = () => {
     <section className="p-8">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-8">
         <div className="flex gap-2">
-          <Link to="/account" className={buttonClass("profile")}>
+          <Link to="/account/profile" className={buttonClass("profile")}>
             {" "}
             Perfil
           </Link>

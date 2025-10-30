@@ -1,10 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const AccPlaces = () => {
-  // const { action } = useParams(); // 👈 REMOVIDO: Este componente só deve ser a lista
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
@@ -52,7 +51,9 @@ const AccPlaces = () => {
               alt="Foto da acomodação"
             />
             <div className="flex flex-col gap-6">
-              <p className="text-xl font-medium">{place.title}</p>
+              <p className="text-xl font-semibold text-gray-700">
+                {place.title}
+              </p>
               <p>{place.description}</p>
             </div>
           </Link>

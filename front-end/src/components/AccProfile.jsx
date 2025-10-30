@@ -22,10 +22,29 @@ const AccProfile = () => {
 
   if (!user) return <></>;
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4 rounded-3xl border border-gray-200 px-6 py-4">
       <p>
-        Logado com {user.name} ({user.email})
+        Bem vindo, <span className="text-bold text-xl">{user.name}</span>
       </p>
+      <div>
+        <div className="flex items-center text-gray-900">
+          <span className="font-semibold">Email:</span> ({user.email})
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#00af54"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+        </div>
+      </div>
       <button
         onClick={handleLogout}
         className="bg-primary-400 hover:bg-primary-500 min-w-44 cursor-pointer rounded-full px-4 py-2 text-white transition"

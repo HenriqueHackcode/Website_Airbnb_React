@@ -13,8 +13,14 @@ const Item = ({ place }) => {
         <h3 className="text-xl font-semibold">{place.city}</h3>
         <p className="truncate text-gray-600">{place.description}</p>
       </div>
-      <p>
-        <span className="font-semibold">{place.price}</span> por noite
+      <p className="text-green-700">
+        <span className="font-semibold">
+          {new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(Number(place.price) || 0)}
+        </span>
+        {""} <span className="text-gray-600">por noite</span>
       </p>
     </Link>
   );
