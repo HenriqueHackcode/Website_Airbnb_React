@@ -22,13 +22,14 @@ const AccProfile = () => {
 
   if (!user) return <></>;
   return (
-    <div className="flex flex-col items-center gap-4 rounded-3xl border border-gray-200 px-6 py-4">
-      <p>
-        Bem vindo, <span className="text-bold text-xl">{user.name}</span>
+    <div className="flex flex-col items-center gap-4 rounded-3xl border border-gray-200 px-14 py-6">
+      <p className="font-semibold">
+        Bem vindo:&nbsp;{" "}
+        <span className="text-xl text-gray-500">{user.name}</span>
       </p>
       <div>
         <div className="flex items-center text-gray-900">
-          <span className="font-semibold">Email:</span> ({user.email})
+          <span className="font-semibold">Email: </span>&nbsp; {user.email}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="#00af54"

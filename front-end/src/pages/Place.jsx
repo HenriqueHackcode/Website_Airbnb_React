@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useUserContext } from "../contexts/UserContext";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Perk from "../components/perk";
 import Booking from "../components/Booking";
@@ -43,6 +43,11 @@ const Place = () => {
     setImage((prevIndex) =>
       prevIndex === 0 ? place.photos.length - 1 : prevIndex - 1,
     );
+  };
+
+  const navigate = useNavigate();
+  const handleOnBack = () => {
+    navigate(-1);
   };
 
   useEffect(() => {
@@ -109,9 +114,9 @@ const Place = () => {
     <section>
       <div className="relative mx-auto flex max-w-7xl flex-col gap-4 p-4 sm:gap-6 sm:p-8">
         <div className="absolute top-0 left-[-50]">
-          <Link
-            to={"/"}
-            className="absolute top-6 left-0 -translate-x-40 rounded-full p-2 transition hover:scale-105"
+          <button
+            onClick={handleOnBack}
+            className="absolute top-6 left-0 -translate-x-40 cursor-pointer rounded-full p-2 transition hover:scale-105"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -124,11 +129,10 @@ const Place = () => {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
               />
             </svg>
-            <p>voltar</p>
-          </Link>
+          </button>
         </div>
 
         {/* Title */}
