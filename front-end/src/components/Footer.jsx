@@ -6,7 +6,8 @@ const Footer = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-1 py-8 sm:px-8">
         <p className="flex text-center text-sm">
           {" "}
-          © 2025 Project-Airbnb, Inc. Privacidade Termos Informações da empresa
+          © 2025 Project-Airbnb, Inc. Privacidade - Termos - Informações da
+          empresa
         </p>
         <div className="flex gap-4">
           <a href="https://www.facebook.com/AirbnbBrasil" target="_blank">

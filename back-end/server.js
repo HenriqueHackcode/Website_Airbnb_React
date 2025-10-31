@@ -19,10 +19,10 @@ app.use(
   })
 );
 
-app.use('/tmp', express.static(`${__dirname}/tmp`));
+app.use('/tmp', express.static(__dirname + '/tmp'));
 app.use(express.static(path.join(__dirname, '../front-end/dist')));
 app.use('/api', routes);
 
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, '../front-end/dist/index.html'));
 });

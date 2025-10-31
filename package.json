@@ -1,0 +1,21 @@
+{
+  "name": "website_airbnb_react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start --prefix back-end",
+    "build": "npm install --prefix back-end && npm install --prefix front-end && npm run build --prefix front-end"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenriqueHackcode/Website_Airbnb_React.git"
+  },
+  "keywords": [],
+  "author": "Henrique Hackbart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenriqueHackcode/Website_Airbnb_React/issues"
+  },
+  "homepage": "https://github.com/HenriqueHackcode/Website_Airbnb_React#readme",
+  "description": ""
+}
