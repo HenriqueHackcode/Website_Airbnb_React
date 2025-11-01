@@ -11,8 +11,6 @@ export const app = express();
 export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = dirname(__filename);
 
-const { PORT } = process.env;
-
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -23,13 +21,19 @@ app.use(
 );
 
 app.use('/tmp', express.static(__dirname + '/tmp'));
+
 app.use(express.static(path.join(__dirname, '../front-end/dist')));
+
 app.use('/api', routes);
 
 app.all(/.*/, (req, res) => {
   res.sendFile(path.resolve(__dirname, '../front-end/dist/index.html'));
 });
 
+const PORT = process.env.PORT || 3001;
+
 app.listen(PORT, () => {
-  console.log(`Servidor rodando com sucesso em http://localhost:${PORT}!`);
+  console.log(`Servidor rodando em http://localhost:${PORT}!`);
 });
+
+export default app;
