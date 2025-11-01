@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 axios.defaults.baseURL =
   import.meta.env.MODE === "development"
     ? "http://localhost:3001/api"
-    : "http://localhost:3001/api";
+    : "https://website-airbnb-react.onrender.com/api";
 axios.defaults.withCredentials = true;
 
 function App() {
