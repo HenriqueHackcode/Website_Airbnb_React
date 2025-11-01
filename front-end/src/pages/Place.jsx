@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useUserContext } from "../contexts/UserContext";
 import { Link, Navigate, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Perk from "../components/perk";
+import Perk from "../components/Perk";
 import Booking from "../components/Booking";
 
 const Place = () => {
