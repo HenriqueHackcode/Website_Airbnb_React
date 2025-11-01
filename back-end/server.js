@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import routes from './routes/index.js';
 import cors from 'cors';
@@ -9,6 +10,8 @@ export const app = express();
 
 export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = dirname(__filename);
+
+const { PORT } = process.env;
 
 app.use(express.json());
 app.use(cookieParser());
@@ -25,4 +28,8 @@ app.use('/api', routes);
 
 app.all(/.*/, (req, res) => {
   res.sendFile(path.resolve(__dirname, '../front-end/dist/index.html'));
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando com sucesso em http://localhost:${PORT}!`);
 });

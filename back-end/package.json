@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch ./index.js",
-    "start": "node ./index.js"
+    "dev": "node --watch ./server.js",
+    "start": "node ./server.js"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +24,6 @@
     "mime-types": "^3.0.1",
     "mongoose": "^8.19.2",
     "multer": "^2.0.2",
-    "url": "^0.11.4",
-    "website_airbnb_react": "file:.."
+    "url": "^0.11.4"
   }
 }
