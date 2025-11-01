@@ -1,5 +1,5 @@
 import React from "react";
-import Perk from "./perk";
+import Perk from "./Perk.jsx";
 
 const Perks = ({ perks, setPerks }) => {
   const handleClick = (target) => {
