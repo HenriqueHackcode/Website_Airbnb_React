@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "node_modules/vite/bin/vite.js build",
+    "build": "node node_modules/vite/bin/vite.js build",
     "preview": "node node_modules/vite/bin/vite.js preview",
     "lint": "eslint ."
   },
@@ -18,7 +18,8 @@
     "axios": "^1.12.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.9.4"
+    "react-router-dom": "^7.9.4",
+    "website_airbnb_react": "file:.."
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
