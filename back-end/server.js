@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: process.env.CLIENT_URL || 'http://localhost:5173',
     credentials: true,
   })
 );
@@ -23,6 +23,6 @@ app.use('/tmp', express.static(__dirname + '/tmp'));
 app.use(express.static(path.join(__dirname, '../front-end/dist')));
 app.use('/api', routes);
 
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, '../front-end/dist/index.html'));
+app.all(/.*/, (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../front-end/dist/index.html'));
 });
