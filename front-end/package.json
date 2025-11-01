@@ -15,7 +15,6 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.15",
     "axios": "^1.12.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -32,7 +31,9 @@
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "tailwindcss": "^4.1.15",
+    "@tailwindcss/vite": "^4.1.15"
   },
   "main": "eslint.config.js",
   "keywords": [],
