@@ -48,20 +48,20 @@ const Login = () => {
         >
           <input
             type="email"
-            className="w-full rounded-full border border-gray-700 bg-white px-4 py-2 placeholder-gray-700"
+            className="w-76 self-center rounded-full border border-gray-700 bg-white px-2 py-1 placeholder-gray-700 md:w-full md:px-4 md:py-2"
             placeholder="Digite seu e-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
-            className="w-full rounded-full border border-gray-700 bg-white px-4 py-2 placeholder-gray-700"
+            className="w-76 self-center rounded-full border border-gray-700 bg-white px-2 py-1 placeholder-gray-700 md:w-full md:px-4 md:py-2"
             placeholder="Digite sua senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button className="bg-primary-400 w-full cursor-pointer rounded-full border border-gray-300 px-4 py-2 font-bold text-white opacity-80">
+          <button className="bg-primary-400 mt-1 w-76 cursor-pointer self-center rounded-full border border-gray-300 py-1 font-bold text-white opacity-80 md:w-full md:px-4 md:py-2">
             Login
           </button>
         </form>

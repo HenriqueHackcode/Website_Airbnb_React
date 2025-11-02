@@ -36,31 +36,33 @@ const Register = () => {
   return (
     <section className="flex items-center">
       <div className="mx-auto flex w-full max-w-96 flex-col items-center gap-4">
-        <h2 className="text-3xl font-bold">Faça seu cadastro</h2>
+        <h2 className="text-2xl font-bold text-gray-700 md:text-3xl">
+          Faça seu cadastro
+        </h2>
         <form className="flex w-full flex-col gap-2" onSubmit={handleSubmit}>
           <input
             type="text"
-            className="w-full rounded-full border border-gray-300 px-4 py-2 placeholder-gray-400"
+            className="w-76 self-center rounded-full border border-gray-300 px-2 py-1 placeholder-gray-400 md:w-full md:px-4 md:py-2"
             placeholder="Digite seu nome"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
             type="email"
-            className="w-full rounded-full border border-gray-300 px-4 py-2 placeholder-gray-400"
+            className="w-76 self-center rounded-full border border-gray-300 px-2 py-1 placeholder-gray-400 md:w-full md:px-4 md:py-2"
             placeholder="Digite seu e-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
-            className="w-full rounded-full border border-gray-300 px-4 py-2 placeholder-gray-400"
+            className="w-76 self-center rounded-full border border-gray-300 px-2 py-1 placeholder-gray-400 md:w-full md:px-4 md:py-2"
             placeholder="Digite sua senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button className="bg-primary-400 w-full cursor-pointer rounded-full border border-gray-300 px-4 py-2 font-bold text-white">
+          <button className="bg-primary-400 mt-1 w-76 cursor-pointer self-center rounded-full border border-gray-300 px-2 py-1 font-bold text-white md:w-full md:px-4 md:py-2">
             Registrar
           </button>
         </form>
