@@ -40,7 +40,7 @@ const AccBookings = () => {
     <div className="relative flex w-full flex-col items-center gap-4">
       {bookings.length === 0 ? (
         <div className="flex flex-col gap-8">
-          <p className="mt-6 flex text-2xl text-gray-700">
+          <p className="mt-6 flex self-center text-gray-700 md:text-2xl">
             Você ainda não possui reservas.
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const AccBookings = () => {
               />
             </svg>
           </p>
-          <div className="flex flex-col justify-center gap-4 self-center text-center text-lg font-semibold">
+          <div className="flex flex-col justify-center gap-4 self-center text-center text-lg md:font-semibold">
             <p className="text-gray-700">Faça a sua reserva, clique abaixo!</p>
             <Link
               to="/"

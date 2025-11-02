@@ -15,7 +15,7 @@ const Home = () => {
   }, []);
   return (
     <section>
-      <div className="mx-auto grid max-w-7xl grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 px-8 py-8">
+      <div className="mx-auto mt-2 grid max-w-7xl grid-cols-1 gap-8 p-4 sm:grid-cols-2 sm:px-8 sm:py-8 md:grid-cols-2 md:p-2 lg:grid-cols-4">
         {places.map((place) => (
           <Item {...{ place }} key={place._id} />
         ))}

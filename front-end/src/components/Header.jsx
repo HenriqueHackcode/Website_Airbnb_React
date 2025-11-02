@@ -7,7 +7,7 @@ const Header = () => {
   const { user } = useUserContext();
   return (
     <header className="bg-gray-100 shadow-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-14 py-7 sm:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-2 py-4 lg:px-4 lg:py-6">
         <Link to="/" className="flex items-center">
           <img src={logo} alt="Logo da Airbnb" className="h-14 w-14" />
         </Link>

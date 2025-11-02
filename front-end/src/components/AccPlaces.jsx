@@ -24,7 +24,7 @@ const AccPlaces = () => {
     <div className="relative flex w-full flex-col items-center">
       <Link
         to="/account/places/new"
-        className="bg-primary-400 hover:bg-primary-500 mb-4 flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-white transition"
+        className="bg-primary-400 hover:bg-primary-500 mb-4 flex cursor-pointer items-center gap-2 rounded-full px-2 py-1 text-xs text-white transition md:px-4 md:py-2 md:text-sm"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ const AccPlaces = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-8"
+          className="size-7 md:size-8"
         >
           <path
             strokeLinecap="round"
@@ -68,19 +68,24 @@ const AccPlaces = () => {
         {places.map((place) => (
           <Link
             to={`/account/places/new/${place._id}`}
-            className="flex items-center gap-6 rounded-2xl bg-gray-100 p-4"
+            className="flex min-h-full min-w-full flex-col gap-3 rounded-2xl bg-gray-100 p-4 sm:w-auto sm:flex-row sm:items-center sm:gap-6"
             key={place._id}
           >
-            <img
-              className="aspect-square max-w-56 rounded-2xl object-center"
-              src={place.photos[0]}
-              alt="Foto da acomodação"
-            />
-            <div className="flex flex-col gap-6">
-              <p className="text-xl font-semibold text-gray-700">
+            <div className="flex flex-col gap-4 text-center text-sm md:text-lg">
+              <p className="order-1 w-full text-xl font-semibold text-gray-700 sm:order-0 sm:w-auto">
                 {place.title}
               </p>
-              <p>{place.description}</p>
+
+              <img
+                className="order-2 aspect-square w-full max-w-56 self-center rounded-2xl object-center sm:order-0 sm:w-auto sm:flex-none"
+                src={place.photos[0]}
+                alt="Foto da acomodação"
+              />
+
+              <p className="order-3 w-full sm:order-0 sm:w-auto">
+                <span className="font-semibold text-gray-700">Descrição:</span>{" "}
+                {place.description}
+              </p>
             </div>
           </Link>
         ))}

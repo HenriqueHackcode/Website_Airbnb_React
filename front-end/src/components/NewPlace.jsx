@@ -27,8 +27,6 @@ const NewPlace = () => {
       const axiosGet = async () => {
         const { data } = await axios.get(`/places/${id}`);
 
-        console.log(data);
-
         setTitle(data.title);
         setCity(data.city);
         setPhotos(data.photos);
@@ -108,15 +106,21 @@ const NewPlace = () => {
   if (redirect) return <Navigate to={"/account/places"} />;
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full flex-col gap-6 px-8">
+    <form
+      onSubmit={handleSubmit}
+      className="flex w-full flex-col gap-4 px-2 md:gap-6 md:px-8"
+    >
       <div className="flex flex-col gap-1">
-        <label htmlFor="title" className="ml-2 text-2xl font-bold">
+        <label
+          htmlFor="title"
+          className="ml-2 font-semibold md:text-2xl md:font-bold"
+        >
           Título
         </label>
         <input
           type="text"
           placeholder="Digite o titulo do seu anúncio"
-          className="rounded-full border border-gray-300 px-4 py-2 placeholder-gray-400"
+          className="rounded-full border border-gray-300 px-2 py-1 placeholder-gray-400 placeholder:text-sm md:px-4 md:py-2"
           id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -124,13 +128,16 @@ const NewPlace = () => {
       </div>
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="city" className="ml-2 text-2xl font-bold">
+        <label
+          htmlFor="city"
+          className="ml-2 font-semibold md:text-2xl md:font-bold"
+        >
           Cidade e País
         </label>
         <input
           type="text"
           placeholder="Digite a cidade e país do seu anúncio"
-          className="rounded-full border border-gray-300 px-4 py-2 placeholder-gray-400"
+          className="rounded-full border border-gray-300 px-2 py-1 placeholder-gray-400 placeholder:text-sm md:px-4 md:py-2"
           id="city"
           value={city}
           onChange={(e) => setCity(e.target.value)}
@@ -140,12 +147,15 @@ const NewPlace = () => {
       <PhotoUploader {...{ photolink, setPhotoLink, setPhotos, photos }} />
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="description" className="ml-2 text-2xl font-bold">
+        <label
+          htmlFor="description"
+          className="ml-2 font-semibold md:text-2xl md:font-bold"
+        >
           Descrição
         </label>
         <textarea
           placeholder="Digite a descrição do seu anúncio"
-          className="h-56 resize-none rounded-2xl border border-gray-300 px-4 py-2 placeholder-gray-400"
+          className="h-56 resize-none rounded-2xl border border-gray-300 px-4 py-2 placeholder-gray-400 placeholder:text-sm"
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -153,31 +163,42 @@ const NewPlace = () => {
       </div>
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="perks" className="ml-2 text-2xl font-bold">
+        <label
+          htmlFor="perks"
+          className="ml-2 font-bold md:text-2xl md:font-bold"
+        >
           Comodidades
         </label>
         <Perks {...{ perks, setPerks }} />
       </div>
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="extras" className="ml-2 text-2xl font-bold">
+        <label
+          htmlFor="extras"
+          className="ml-2 font-bold md:text-2xl md:font-bold"
+        >
           Informações adicionais
         </label>
         <textarea
           placeholder="Digite a descrição do seu anúncio"
-          className="h-56 resize-none rounded-2xl border border-gray-300 px-4 py-2 placeholder-gray-400"
+          className="h-56 resize-none rounded-2xl border border-gray-300 px-4 py-2 placeholder-gray-400 placeholder:text-sm"
           id="extras"
           value={extras}
           onChange={(e) => setExtras(e.target.value)}
         />
       </div>
 
-      <div className="flex flex-col gap-1">
-        <h2 className="ml-2 text-2xl font-bold">Restrições e Preço</h2>
+      <div className="flex flex-col gap-3">
+        <h2 className="ml-2 text-center font-bold md:text-2xl md:font-semibold">
+          Restrições e Preço
+        </h2>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(225px,1fr))] gap-6 pt-2">
           <div className="flex flex-col gap-2">
-            <label className="ml-2 text-xl font-bold" htmlFor="price">
+            <label
+              className="ml-2 text-xl md:text-2xl md:font-bold"
+              htmlFor="price"
+            >
               Preço
             </label>
             <input
@@ -191,7 +212,10 @@ const NewPlace = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="ml-2 text-xl font-bold" htmlFor="checkin">
+            <label
+              className="ml-2 text-xl md:text-2xl md:font-bold"
+              htmlFor="checkin"
+            >
               Checkin
             </label>
             <input
@@ -205,7 +229,10 @@ const NewPlace = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="ml-2 text-xl font-bold" htmlFor="checkout">
+            <label
+              className="ml-2 text-xl md:text-2xl md:font-bold"
+              htmlFor="checkout"
+            >
               Checkout
             </label>
             <input
@@ -219,7 +246,10 @@ const NewPlace = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="ml-2 text-xl font-bold" htmlFor="guests">
+            <label
+              className="ml-2 text-xl md:text-2xl md:font-bold"
+              htmlFor="guests"
+            >
               N° convidados
             </label>
             <input

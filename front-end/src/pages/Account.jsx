@@ -44,8 +44,8 @@ const Account = () => {
   }
 
   return (
-    <section className="p-8">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-8">
+    <section className="px-3 sm:p-8">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 pt-6">
         <div className="flex gap-2">
           <Link to="/account/profile" className={buttonClass("profile")}>
             {" "}

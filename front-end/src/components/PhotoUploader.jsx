@@ -54,7 +54,10 @@ const PhotoUploader = ({ photolink, setPhotoLink, setPhotos, photos }) => {
 
   return (
     <div className="flex flex-col gap-1">
-      <label htmlFor="fotos" className="ml-2 text-2xl font-bold">
+      <label
+        htmlFor="fotos"
+        className="ml-2 font-semibold md:text-2xl md:font-bold"
+      >
         Fotos
       </label>
 
@@ -62,20 +65,20 @@ const PhotoUploader = ({ photolink, setPhotoLink, setPhotos, photos }) => {
         <input
           type="text"
           placeholder="Adicione o link da foto"
-          className="mb-2 grow rounded-full border border-gray-300 px-4 py-2 placeholder-gray-400"
+          className="mb-2 grow rounded-full border border-gray-300 px-2 py-1 placeholder-gray-400 placeholder:text-sm md:px-4 md:py-2 md:placeholder:text-sm"
           id="photolink"
           value={photolink}
           onChange={(e) => setPhotoLink(e.target.value)}
         />
         <button
           onClick={uploadByLink}
-          className="cursor-pointer rounded-full border border-gray-300 bg-gray-100 px-4 py-2 transition hover:bg-gray-200"
+          className="cursor-pointer justify-center rounded-full border border-gray-300 bg-gray-100 px-4 text-sm font-semibold transition hover:bg-gray-200 md:px-3 md:text-lg"
         >
-          Enviar foto
+          Enviar
         </button>
       </div>
 
-      <div className="grid grid-cols-5 gap-4">
+      <div className="mt-1 grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
         {photos.map((photo) => (
           <div key={photo} className="relative">
             <img
@@ -129,7 +132,7 @@ const PhotoUploader = ({ photolink, setPhotoLink, setPhotos, photos }) => {
 
         <label
           htmlFor="file"
-          className="flex aspect-square cursor-pointer items-center justify-center gap-2 rounded-2xl border border-gray-300"
+          className="flex w-40 cursor-pointer flex-wrap items-center justify-center gap-2 rounded-2xl border border-gray-300 px-1 py-1 text-sm md:aspect-square md:flex-nowrap"
         >
           <input
             type="file"

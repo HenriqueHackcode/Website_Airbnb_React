@@ -3,13 +3,12 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="mt-10 bg-gray-100 shadow-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-1 py-8 sm:px-8">
-        <p className="flex text-center text-sm">
+      <div className="mx-auto flex max-w-7xl items-center justify-between p-4">
+        <p className="flex text-center text-xs sm:text-sm">
           {" "}
-          © 2025 Project-Airbnb, Inc. Privacidade - Termos - Informações da
-          empresa
+          © 2025 Project-Airbnb, Inc. Privacidade - Informações da empresa
         </p>
-        <div className="flex gap-4">
+        <div className="flex justify-end gap-1 sm:gap-2 md:h-full md:w-full">
           <a href="https://www.facebook.com/AirbnbBrasil" target="_blank">
             <img
               src="https://img.icons8.com/?size=24&id=118489&format=png"
