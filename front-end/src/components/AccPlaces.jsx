@@ -42,27 +42,25 @@ const AccPlaces = () => {
         </svg>
         Adicionar novo lugar
       </Link>
-      <div className="absolute top-0 left-0">
-        <button
-          onClick={handleOnBack}
-          className="absolute top-6 left-0 -translate-x-40 cursor-pointer rounded-full p-2 transition hover:scale-105"
+      <button
+        onClick={handleOnBack}
+        className="fixed top-45 left-0 cursor-pointer rounded-full p-2 transition hover:scale-105"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="size-6"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.75 19.5 8.25 12l7.5-7.5"
-            />
-          </svg>
-        </button>
-      </div>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </svg>
+      </button>
 
       <div className="flex flex-col items-center gap-6">
         {places.map((place) => (

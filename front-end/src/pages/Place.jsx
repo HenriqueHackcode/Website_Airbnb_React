@@ -112,34 +112,12 @@ const Place = () => {
   }
   return (
     <section>
-      <div className="relative mx-auto flex max-w-7xl flex-col gap-4 p-4 sm:gap-6 sm:p-8">
-        <div className="absolute top-0 left-[-50]">
-          <button
-            onClick={handleOnBack}
-            className="absolute top-6 left-0 -translate-x-40 cursor-pointer rounded-full p-2 transition hover:scale-105"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5 8.25 12l7.5-7.5"
-              />
-            </svg>
-          </button>
-        </div>
-
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-2 py-2 md:px-4">
         {/* Title */}
         <div className="flex flex-col sm:gap-1">
           <div className="text-xl font-bold sm:text-3xl">{place.title}</div>
 
-          <div className="flex items-center gap-1">
+          <div className="relative flex items-center gap-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -163,6 +141,26 @@ const Place = () => {
             <p>{place.city}</p>
           </div>
         </div>
+
+        <button
+          onClick={handleOnBack}
+          className="fixed top-36 left-1 cursor-pointer rounded-full p-2 transition hover:scale-105"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+        </button>
 
         {/* Booking */}
         <div className="flex flex-col gap-4">
